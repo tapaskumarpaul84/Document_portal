@@ -6,7 +6,7 @@ from fastapi import UploadFile
 import fitz  # PyMuPDF
 from langchain.schema import Document
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
-from logger.custom_logger import CustomLogger
+from logger import GLOBAL_LOGGER as log
 from exceptions.custom_exception import DocumentPortalException
 
 
@@ -18,7 +18,7 @@ def load_documents(paths: Iterable[Path]) -> List[Document]:
     """Load docs using appropriate loader based on extension."""
     docs: List[Document] = []
     try:
-        log = CustomLogger().get_logger(__name__)
+        
         for p in paths:
             ext = p.suffix.lower()
             if ext == ".pdf":

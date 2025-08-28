@@ -9,3 +9,4 @@ __init__.py
 archive/
 faiss_index/
 .dockerignore
+.pytest_cache

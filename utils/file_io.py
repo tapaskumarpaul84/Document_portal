@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from typing import Iterable, List
-from logger.custom_logger import CustomLogger
+from logger import GLOBAL_LOGGER as log
 from exceptions.custom_exception import DocumentPortalException
 
 SUPPORTED_EXTENSIONS = {".pdf", ".docx", ".txt"}
@@ -20,7 +20,7 @@ def generate_session_id(prefix: str = "session") -> str:
 def save_uploaded_files(uploaded_files: Iterable, target_dir: Path) -> List[Path]:
     """Save uploaded files (Streamlit-like) and return local paths."""
     try:
-        log = CustomLogger().get_logger(__name__)
+        
         target_dir.mkdir(parents=True, exist_ok=True)
         saved: List[Path] = []
         for uf in uploaded_files:
