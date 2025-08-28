@@ -37,9 +37,10 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/documentportaltd",
-          "awslogs-region": "aap-south-1",
+          "awslogs-region": "ap-south-1",
           "awslogs-stream-prefix": "ecs",
           "awslogs-create-group": "true"
+
         }
       }
     }
