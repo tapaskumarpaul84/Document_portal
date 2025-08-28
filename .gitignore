@@ -5,7 +5,6 @@ logs/
 *.pyc
 __pycache__/
 test.ipynb
-__init__.py
 archive/
 faiss_index/
 .dockerignore
